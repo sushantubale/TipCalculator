@@ -17,6 +17,7 @@ struct ContentView: View {
             HStack() {
                 VStack(alignment: .center, spacing: 30) {
                     TextField("0.0", text: $valueField)
+                        .disabled(true)
                         .padding()
                         .cornerRadius(3.0)
                         .overlay {
@@ -25,6 +26,9 @@ struct ContentView: View {
                                 .foregroundColor(.blue)
                         }
                         .foregroundColor(.blue)
+                    CalulatorButton(title: "Clear") {
+                        valueField = ""
+                    }
                     HStack(spacing: 20) {
                         CalulatorButton(title: "1") {
                             valueField.append("1")
@@ -62,13 +66,22 @@ struct ContentView: View {
                         CalulatorButton(title: "0") {
                             valueField.append("0")
                         }
-                        CalulatorButton(title: ".") {
+                        Button {
                             valueField.append(".")
+                        } label: {
+                            Text(".")
+                                .bold()
                         }
-                        CalulatorButton(title: "AC") {
-                            valueField = ""
+                        .padding(.all)
+                        .frame(width: 40, height: 50)
+                        .cornerRadius(3.0)
+                        .overlay {
+                            RoundedRectangle(cornerSize: CGSize(width: 40, height: 40), style: .circular)
+                                .stroke(style: StrokeStyle(lineWidth: 3.0))
+                                .foregroundColor(.blue)
                         }
                     }
+
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
                             CalulatorButton(title: "Oz to Litre") {

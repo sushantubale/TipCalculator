@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		0AD82C432C83A5CE00BF221B /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		0AD82C452C83ABA200BF221B /* ConversionTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionTypes.swift; sourceTree = "<group>"; };
-		0AED7E6A2C83968D006FDF96 /* Tip Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tip Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AED7E6A2C83968D006FDF96 /* Easy Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AED7E6D2C83968D006FDF96 /* Tip_CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip_CalculatorApp.swift; sourceTree = "<group>"; };
 		0AED7E6F2C83968D006FDF96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0AED7E712C83968F006FDF96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		0AED7E6B2C83968D006FDF96 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0AED7E6A2C83968D006FDF96 /* Tip Calculator.app */,
+				0AED7E6A2C83968D006FDF96 /* Easy Converter.app */,
 				0AED7E7A2C839690006FDF96 /* Tip CalculatorTests.xctest */,
 				0AED7E842C839690006FDF96 /* Tip CalculatorUITests.xctest */,
 			);
@@ -169,7 +169,7 @@
 			);
 			name = "Tip Calculator";
 			productName = "Tip Calculator";
-			productReference = 0AED7E6A2C83968D006FDF96 /* Tip Calculator.app */;
+			productReference = 0AED7E6A2C83968D006FDF96 /* Easy Converter.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0AED7E792C839690006FDF96 /* Tip CalculatorTests */ = {
@@ -464,7 +464,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sushant.tipcalculator.Tip-Calculator";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Easy Converter";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -493,7 +493,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sushant.tipcalculator.Tip-Calculator";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Easy Converter";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
