@@ -9,12 +9,14 @@ import SwiftUI
 
 struct CalulatorButton: View {
     var title: String
+    var action: () -> ()
     
     var body: some View {
         Button {
-            
+            action()
         } label: {
             Text(title)
+                .bold()
         }
         .padding(.all)
         .cornerRadius(3.0)
@@ -27,5 +29,7 @@ struct CalulatorButton: View {
 }
 
 #Preview {
-    CalulatorButton(title: "1")
+    CalulatorButton(title: "1", action: {
+        
+    })
 }

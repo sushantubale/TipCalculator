@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AD82C442C83A5CE00BF221B /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD82C432C83A5CE00BF221B /* CalculatorViewModel.swift */; };
 		0AED7E6E2C83968D006FDF96 /* Tip_CalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7E6D2C83968D006FDF96 /* Tip_CalculatorApp.swift */; };
 		0AED7E702C83968D006FDF96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7E6F2C83968D006FDF96 /* ContentView.swift */; };
 		0AED7E722C83968F006FDF96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AED7E712C83968F006FDF96 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AD82C432C83A5CE00BF221B /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		0AED7E6A2C83968D006FDF96 /* Tip Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tip Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AED7E6D2C83968D006FDF96 /* Tip_CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip_CalculatorApp.swift; sourceTree = "<group>"; };
 		0AED7E6F2C83968D006FDF96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AD82C422C83A5B700BF221B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0AD82C432C83A5CE00BF221B /* CalculatorViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0AED7E612C83968D006FDF96 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +106,7 @@
 		0AED7E6C2C83968D006FDF96 /* Tip Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				0AD82C422C83A5B700BF221B /* ViewModel */,
 				0AED7E972C8399F6006FDF96 /* HelperViews */,
 				0AED7E6D2C83968D006FDF96 /* Tip_CalculatorApp.swift */,
 				0AED7E6F2C83968D006FDF96 /* ContentView.swift */,
@@ -270,6 +281,7 @@
 			files = (
 				0AED7E702C83968D006FDF96 /* ContentView.swift in Sources */,
 				0AED7E6E2C83968D006FDF96 /* Tip_CalculatorApp.swift in Sources */,
+				0AD82C442C83A5CE00BF221B /* CalculatorViewModel.swift in Sources */,
 				0AED7E992C839A0B006FDF96 /* CalulatorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
