@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            HStack {
+            HStack() {
                 VStack(alignment: .center, spacing: 30) {
                     TextField("0.0", text: $valueField)
                         .padding()
@@ -35,9 +35,6 @@ struct ContentView: View {
                         CalulatorButton(title: "3") {
                             valueField.append("3")
                         }
-                        CalulatorButton(title: "+") {
-                            valueField.append("+")
-                        }
                     }
                     HStack(spacing: 20) {
                         CalulatorButton(title: "4") {
@@ -48,9 +45,6 @@ struct ContentView: View {
                         }
                         CalulatorButton(title: "6") {
                             valueField.append("6")
-                        }
-                        CalulatorButton(title: "-") {
-                            valueField.append("-")
                         }
                     }
                     HStack(spacing: 20) {
@@ -63,10 +57,6 @@ struct ContentView: View {
                         CalulatorButton(title: "9") {
                             valueField.append("9")
                         }
-                        
-                        CalulatorButton(title: "*") {
-                            valueField.append("*")
-                        }
                     }
                     HStack(spacing: 20) {
                         CalulatorButton(title: "0") {
@@ -75,16 +65,33 @@ struct ContentView: View {
                         CalulatorButton(title: ".") {
                             valueField.append(".")
                         }
-                        CalulatorButton(title: "=") {
-                            viewModel.calculate(value: valueField)
+                        CalulatorButton(title: "AC") {
+                            valueField = ""
                         }
-                        CalulatorButton(title: "/") {
-                            valueField.append("/")
+                    }
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
+                            CalulatorButton(title: "Oz to Litre") {
+                                viewModel.calculate(value: valueField, conversionType: .OZToLitre)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Litre to Oz") {
+                                viewModel.calculate(value: valueField, conversionType: .litreToOZ)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Pound to Kg") {
+                                viewModel.calculate(value: valueField, conversionType: .poundToKg)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Kg to Pound") {
+                                viewModel.calculate(value: valueField, conversionType: .kgToPound)
+                                valueField = String(viewModel.result)
+                            }
                         }
                     }
                 }
                 .padding()
-                .navigationTitle("Tip Calculator")
+                .navigationTitle("Easy Converter")
                 .navigationBarTitleDisplayMode(.inline)
             }
         }
