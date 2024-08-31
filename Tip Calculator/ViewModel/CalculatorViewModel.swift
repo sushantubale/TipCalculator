@@ -14,13 +14,13 @@ class CalculatorViewModel: ObservableObject {
     func calculate(value: String, conversionType: ConversionType) {
         switch conversionType {
         case .OZToLitre:
-            result = (Double(value) ?? 0) * 0.0295735
+            result = round(Double(value) ?? 0) * 0.0295735
         case .litreToOZ:
-            result = (Double(value) ?? 0) * 33.814
+            result = round(Double(value) ?? 0) * 33.814
         case .kgToPound:
-            result = (Double(value) ?? 0) * 2.20462
+            result = round(Double(value) ?? 0) * 2.20462
         case .poundToKg:
-            result = (Double(value) ?? 0) * 0.453592
+            result = round(Double(value) ?? 0) * 0.453592
         }
     }
 }
