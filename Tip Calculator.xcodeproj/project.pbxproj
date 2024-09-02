@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A9787752C8637CF0070A998 /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9787742C8637CF0070A998 /* CurrencyConverter.swift */; };
+		0A9787772C863AF80070A998 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9787762C863AF80070A998 /* CurrencyViewModel.swift */; };
 		0AD82C442C83A5CE00BF221B /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD82C432C83A5CE00BF221B /* CalculatorViewModel.swift */; };
 		0AD82C462C83ABA200BF221B /* ConversionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD82C452C83ABA200BF221B /* ConversionTypes.swift */; };
 		0AED7E6E2C83968D006FDF96 /* Tip_CalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7E6D2C83968D006FDF96 /* Tip_CalculatorApp.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A9787742C8637CF0070A998 /* CurrencyConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
+		0A9787762C863AF80070A998 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		0AD82C432C83A5CE00BF221B /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		0AD82C452C83ABA200BF221B /* ConversionTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionTypes.swift; sourceTree = "<group>"; };
 		0AED7E6A2C83968D006FDF96 /* Convert Handy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Convert Handy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,11 +81,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A9787732C8637BF0070A998 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A9787742C8637CF0070A998 /* CurrencyConverter.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0AD82C422C83A5B700BF221B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				0AD82C432C83A5CE00BF221B /* CalculatorViewModel.swift */,
 				0AD82C452C83ABA200BF221B /* ConversionTypes.swift */,
+				0A9787762C863AF80070A998 /* CurrencyViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -109,6 +122,7 @@
 		0AED7E6C2C83968D006FDF96 /* Tip Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				0A9787732C8637BF0070A998 /* Views */,
 				0AD82C422C83A5B700BF221B /* ViewModel */,
 				0AED7E972C8399F6006FDF96 /* HelperViews */,
 				0AED7E6D2C83968D006FDF96 /* Tip_CalculatorApp.swift */,
@@ -285,6 +299,8 @@
 				0AED7E702C83968D006FDF96 /* ContentView.swift in Sources */,
 				0AED7E6E2C83968D006FDF96 /* Tip_CalculatorApp.swift in Sources */,
 				0AD82C442C83A5CE00BF221B /* CalculatorViewModel.swift in Sources */,
+				0A9787772C863AF80070A998 /* CurrencyViewModel.swift in Sources */,
+				0A9787752C8637CF0070A998 /* CurrencyConverter.swift in Sources */,
 				0AED7E992C839A0B006FDF96 /* CalulatorButton.swift in Sources */,
 				0AD82C462C83ABA200BF221B /* ConversionTypes.swift in Sources */,
 			);

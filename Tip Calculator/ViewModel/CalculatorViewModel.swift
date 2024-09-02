@@ -17,7 +17,7 @@ class CalculatorViewModel: ObservableObject {
             return
         }
 
-        var doubleValue = round(convertedValue)
+        let doubleValue = round(convertedValue)
 
         switch conversionType {
         case .OZToLitre:
@@ -106,7 +106,46 @@ class CalculatorViewModel: ObservableObject {
         case .hoursToSeconds:
             result = doubleValue * 3600
         case .secondsToHours:
-            result = doubleValue / 3600            
+            result = doubleValue / 3600     
+            
+        case .currencyConversion(let fromCurrency, let toCurrency):
+            convertCurrency(amount: doubleValue, from: fromCurrency, to: toCurrency)
         }
     }
+    
+    private func convertCurrency(amount: Double, from: String, to: String) {
+        let apiKey = "5e54d3e498a58e0d72995e31"
+        let urlString = "https://v6.exchangerate-api.com/v6/\(apiKey)/pair/\(from)/\(to)/\(amount)"
+        guard let url = URL(string: urlString) else {
+            // Handle invalid URL
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                return
+            }
+
+            guard let data = data else {
+                return
+            }
+
+            do {
+                let decoder = JSONDecoder()
+                let conversionResult = try decoder.decode(ConversionResult.self, from: data)
+                DispatchQueue.main.async {
+                    self.result = conversionResult.conversion_rate
+                }
+            } catch {
+                // Handle decoding error
+            }
+        }.resume()
+    }
+}
+
+struct ConversionResult: Codable {
+    let base_code: String
+    let target_code: String
+    let conversion_rate: Double
+    let conversion_result: Double
 }

@@ -12,21 +12,21 @@ struct CalulatorButton: View {
     var action: () -> ()
     
     var body: some View {
-        Button {
-            action()
-        } label: {
+        Button(action: action) {
             Text(title)
+                .font(.title2)
                 .bold()
-        }
-        .padding(.all)
-        .cornerRadius(3.0)
-        .overlay {
-            RoundedRectangle(cornerSize: CGSize(width: 30, height: 30), style: .circular)
-                .stroke(style: StrokeStyle(lineWidth: 3.0))
-                .foregroundColor(.blue)
+                .foregroundColor(.white)
+                .padding()
+                .background(LinearGradient(gradient: Gradient(colors: [Color.orange, Color.red]),
+                                           startPoint: .top,
+                                           endPoint: .bottom))
+                .cornerRadius(10)
+                .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 5)
         }
     }
 }
+
 
 #Preview {
     CalulatorButton(title: "1", action: {

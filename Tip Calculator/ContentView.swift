@@ -14,86 +14,55 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            HStack() {
+            ZStack {
+                // Background color
+                LinearGradient(gradient: Gradient(colors: [Color.green.opacity(0.3), Color.blue.opacity(0.3)]),
+                               startPoint: .topLeading,
+                               endPoint: .bottomTrailing)
+                    .edgesIgnoringSafeArea(.all)
+                
                 VStack(alignment: .center, spacing: 30) {
                     TextField("0.0", text: $valueField)
                         .disabled(true)
                         .padding()
-                        .cornerRadius(3.0)
+                        .background(Color.white.opacity(0.2))
+                        .cornerRadius(10)
                         .overlay {
-                            RoundedRectangle(cornerSize: CGSize(width: 20, height: 20), style: .circular)
-                                .stroke(style: StrokeStyle(lineWidth: 3.0))
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(style: StrokeStyle(lineWidth: 2.0))
                                 .foregroundColor(.blue)
                         }
-                        .foregroundColor(.blue)
+                        .foregroundColor(.white)
+                        .font(.largeTitle)
+                        .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 5)
+                    
                     CalulatorButton(title: "Clear") {
                         valueField = ""
                     }
-                    HStack(spacing: 20) {
-                        CalulatorButton(title: "1") {
-                            valueField.append("1")
+                    
+                    VStack(spacing: 20) {
+                        ForEach(0..<3) { row in
+                            HStack(spacing: 20) {
+                                ForEach(1..<4) { col in
+                                    let number = row * 3 + col
+                                    CalulatorButton(title: "\(number)") {
+                                        valueField.append("\(number)")
+                                    }
+                                }
+                            }
                         }
-                        CalulatorButton(title: "2") {
-                            valueField.append("2")
-                        }
-                        CalulatorButton(title: "3") {
-                            valueField.append("3")
-                        }
-                    }
-                    HStack(spacing: 20) {
-                        CalulatorButton(title: "4") {
-                            valueField.append("4")
-                        }
-                        CalulatorButton(title: "5") {
-                            valueField.append("5")
-                        }
-                        CalulatorButton(title: "6") {
-                            valueField.append("6")
-                        }
-                    }
-                    HStack(spacing: 20) {
-                        CalulatorButton(title: "7") {
-                            valueField.append("7")
-                        }
-                        CalulatorButton(title: "8") {
-                            valueField.append("8")
-                        }
-                        CalulatorButton(title: "9") {
-                            valueField.append("9")
-                        }
-                    }
-                    HStack(spacing: 20) {
-                        CalulatorButton(title: "0") {
-                            valueField.append("0")
-                        }
-                        Button {
-                            valueField.append(".")
-                        } label: {
-                            Text(".")
-                                .bold()
-                        }
-                        .padding(.all)
-                        .frame(width: 40, height: 50)
-                        .cornerRadius(3.0)
-                        .overlay {
-                            RoundedRectangle(cornerSize: CGSize(width: 40, height: 40), style: .circular)
-                                .stroke(style: StrokeStyle(lineWidth: 3.0))
-                                .foregroundColor(.blue)
+                        HStack(spacing: 20) {
+                            CalulatorButton(title: "0") {
+                                valueField.append("0")
+                            }
+                            CalulatorButton(title: ".") {
+                                valueField.append(".")
+                            }
                         }
                     }
                     
-                    ScrollView(.horizontal) {
+                    ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
-                            
-                            // Length
-                            CalulatorButton(title: "Miles to Kilometers") {
-                                viewModel.calculate(value: valueField, conversionType: .milesToKilometers)
-                                valueField = String(viewModel.result)
-                            }
-                            CalulatorButton(title: "Kilometers to Miles") {
-                                viewModel.calculate(value: valueField, conversionType: .kilometersToMiles)
-                                valueField = String(viewModel.result)
-                            }
                             CalulatorButton(title: "Inches to Centimeters") {
                                 viewModel.calculate(value: valueField, conversionType: .inchesToCentimeters)
                                 valueField = String(viewModel.result)
@@ -245,7 +214,20 @@ struct ContentView: View {
                                 viewModel.calculate(value: valueField, conversionType: .poundToKg)
                                 valueField = String(viewModel.result)
                             }
+
                         }
+                    }
+                    
+                    NavigationLink(destination: CurrencyConverter()) {
+                        Text("Currency Converter")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(LinearGradient(gradient: Gradient(colors: [Color.purple, Color.blue]),
+                                                       startPoint: .leading,
+                                                       endPoint: .trailing))
+                            .cornerRadius(10)
+                            .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                 }
                 .padding()
@@ -255,7 +237,6 @@ struct ContentView: View {
         }
     }
 }
-
 #Preview {
     ContentView()
 }
