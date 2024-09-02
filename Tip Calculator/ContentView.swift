@@ -81,23 +81,168 @@ struct ContentView: View {
                                 .foregroundColor(.blue)
                         }
                     }
-
+                    
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
-                            CalulatorButton(title: "Oz to Litre") {
-                                viewModel.calculate(value: valueField, conversionType: .OZToLitre)
+                            
+                            // Length
+                            CalulatorButton(title: "Miles to Kilometers") {
+                                viewModel.calculate(value: valueField, conversionType: .milesToKilometers)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Kilometers to Miles") {
+                                viewModel.calculate(value: valueField, conversionType: .kilometersToMiles)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Inches to Centimeters") {
+                                viewModel.calculate(value: valueField, conversionType: .inchesToCentimeters)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Centimeters to Inches") {
+                                viewModel.calculate(value: valueField, conversionType: .centimetersToInches)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Feet to Meters") {
+                                viewModel.calculate(value: valueField, conversionType: .feetToMeters)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Meters to Feet") {
+                                viewModel.calculate(value: valueField, conversionType: .metersToFeet)
+                                valueField = String(viewModel.result)
+                            }
+                            
+                            // Temperature
+                            CalulatorButton(title: "Celsius to Fahrenheit") {
+                                viewModel.calculate(value: valueField, conversionType: .celsiusToFahrenheit)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Fahrenheit to Celsius") {
+                                viewModel.calculate(value: valueField, conversionType: .fahrenheitToCelsius)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Celsius to Kelvin") {
+                                viewModel.calculate(value: valueField, conversionType: .celsiusToKelvin)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Kelvin to Celsius") {
+                                viewModel.calculate(value: valueField, conversionType: .kelvinToCelsius)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Fahrenheit to Kelvin") {
+                                viewModel.calculate(value: valueField, conversionType: .fahrenheitToKelvin)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Kelvin to Fahrenheit") {
+                                viewModel.calculate(value: valueField, conversionType: .kelvinToFahrenheit)
+                                valueField = String(viewModel.result)
+                            }
+                            
+                            // Area
+                            CalulatorButton(title: "Square Feet to Square Meters") {
+                                viewModel.calculate(value: valueField, conversionType: .squareFeetToSquareMeters)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Square Meters to Square Feet") {
+                                viewModel.calculate(value: valueField, conversionType: .squareMetersToSquareFeet)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Acres to Hectares") {
+                                viewModel.calculate(value: valueField, conversionType: .acresToHectares)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Hectares to Acres") {
+                                viewModel.calculate(value: valueField, conversionType: .hectaresToAcres)
+                                valueField = String(viewModel.result)
+                            }
+                            
+                            // Volume
+                            CalulatorButton(title: "Gallons to Liters") {
+                                viewModel.calculate(value: valueField, conversionType: .gallonsToLiters)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Liters to Gallons") {
+                                viewModel.calculate(value: valueField, conversionType: .litersToGallons)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Cups to Milliliters") {
+                                viewModel.calculate(value: valueField, conversionType: .cupsToMilliliters)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Milliliters to Cups") {
+                                viewModel.calculate(value: valueField, conversionType: .millilitersToCups)
+                                valueField = String(viewModel.result)
+                            }
+                            
+                            // Speed
+                            CalulatorButton(title: "Miles per Hour to Kilometers per Hour") {
+                                viewModel.calculate(value: valueField, conversionType: .milesPerHourToKilometersPerHour)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Kilometers per Hour to Miles per Hour") {
+                                viewModel.calculate(value: valueField, conversionType: .kilometersPerHourToMilesPerHour)
+                                valueField = String(viewModel.result)
+                            }
+                            
+                            // Currency
+                            // (Implementation for currency conversions will depend on your API integration)
+                            
+                            // Time
+                            CalulatorButton(title: "Hours to Minutes") {
+                                viewModel.calculate(value: valueField, conversionType: .hoursToMinutes)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Minutes to Hours") {
+                                viewModel.calculate(value: valueField, conversionType: .minutesToHours)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Minutes to Seconds") {
+                                viewModel.calculate(value: valueField, conversionType: .minutesToSeconds)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Seconds to Minutes") {
+                                viewModel.calculate(value: valueField, conversionType: .secondsToMinutes)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Hours to Seconds") {
+                                viewModel.calculate(value: valueField, conversionType: .hoursToSeconds)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Seconds to Hours") {
+                                viewModel.calculate(value: valueField, conversionType: .secondsToHours)
+                                valueField = String(viewModel.result)
+                            }
+                            
+                            // Your existing conversions
+                            CalulatorButton(title: "Gram to Kg") {
+                                viewModel.calculate(value: valueField, conversionType: .gramToKg)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Kg to Gram") {
+                                viewModel.calculate(value: valueField, conversionType: .kgToGram)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Kg to Milligram") {
+                                viewModel.calculate(value: valueField, conversionType: .kgToMilligram)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Kg to Pound") {
+                                viewModel.calculate(value: valueField, conversionType: .kgToPound)
                                 valueField = String(viewModel.result)
                             }
                             CalulatorButton(title: "Litre to Oz") {
                                 viewModel.calculate(value: valueField, conversionType: .litreToOZ)
                                 valueField = String(viewModel.result)
                             }
-                            CalulatorButton(title: "Pound to Kg") {
-                                viewModel.calculate(value: valueField, conversionType: .poundToKg)
+                            CalulatorButton(title: "Milligram to Kg") {
+                                viewModel.calculate(value: valueField, conversionType: .milligramToKg)
                                 valueField = String(viewModel.result)
                             }
-                            CalulatorButton(title: "Kg to Pound") {
-                                viewModel.calculate(value: valueField, conversionType: .kgToPound)
+                            CalulatorButton(title: "Oz to Litre") {
+                                viewModel.calculate(value: valueField, conversionType: .OZToLitre)
+                                valueField = String(viewModel.result)
+                            }
+                            CalulatorButton(title: "Pound to Kg") {
+                                viewModel.calculate(value: valueField, conversionType: .poundToKg)
                                 valueField = String(viewModel.result)
                             }
                         }
@@ -114,3 +259,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
